@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block head %}
+
+<style>
+
+.big-circle {
+    position: relative;
+    width: 40vh;
+    height: 40vh;
+    background-color: #ac5;
+    border-radius: 150px;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: -webkit-box;
+}
+
+.small-circle {
+    position: absolute;
+    width: 25vh;
+    height: 25vh;
+    background-color: #ac5;
+    border-radius: 100px;
+}
+
+.page-section {
+    height: 100vh;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: -webkit-box;
+}
+
+#welcome-section {
+    height: 100vh;
+    background-color: green;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: -webkit-box;
+}
+
+
+</style>
+
+
+{% endblock %}
+
+
+
+
+
+{% block content %}
+<div id="welcome-section">
+
+    <div>
+        <div class="big-circle">
+            <h2> Matthew Cook </h2>
+        </div>
+    </div>
+
+</div>
+<div class="page-section">
+
+    <div class="big-circle"></div>
+
+</div>
+
+<div hidden class="small-circle" id="reference">
+</div>
+
+<script src="{{ url_for('static', filename='js/me.js') }}"></script>
+<script type="text/javascript">
+    make_satellites('big-circle', {{circles|safe}});
+</script>
+
+
+{% endblock %}

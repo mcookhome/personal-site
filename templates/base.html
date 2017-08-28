@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+  <head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+
+    <title>Matthew Cook</title>
+
+    <style>
+        body { 
+            background-color: #ffffff;
+        }
+
+
+        .container {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border-radius: 15px;
+            background-color: #e3f2fd;
+        }
+
+        .dark-container {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 15px;
+            border-radius: 15px;
+            background-color: #BEBEBE;
+        }
+
+        .navbar {
+            display: none;
+        }
+
+    </style>
+
+    {% block head %}
+    {% endblock %}
+  </head>
+  <body>
+    <nav class="navbar navbar-toggleable navbar-light bg-faded fixed-top" style="background-color: #e3f2fd;border-bottom: 1px solid; border-color:#BEBEBE">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button> 
+
+
+        {% set navigation_bar = [
+           ('/', 'index', 'Home'),
+         ] -%}
+        <!--    ('/wow/', 'wow', 'Wow'),
+            ('/link/', 'link', 'Link'),
+            ('/about/', 'about', 'About') -->
+
+        {% set active_page = active_page|default('index') -%}
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li>
+                 <a class="navbar-brand" href="#">Matthew Cook</a>
+                </li>
+                {% for href, id, caption in navigation_bar %}
+                <li class="nav-item {% if id == active_page %} active {% endif %}">
+                <a class="nav-link" href="{{ href|e }}">{{ caption|e }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </nav>
+    <div id="content">
+        {% block content %} 
+        {% endblock %}
+    </div>
+    <div id="footer">
+        {% block footer %}
+        {% endblock %}
+    </div>
+  </body>
+</html>
