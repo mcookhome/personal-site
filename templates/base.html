@@ -50,10 +50,10 @@
         </button> 
 
 
-        {% set navigation_bar = [
+        <!-- {% set navigation_bar = [
            ('/', 'index', 'Home'),
          ] -%}
-        <!--    ('/wow/', 'wow', 'Wow'),
+            ('/wow/', 'wow', 'Wow'),
             ('/link/', 'link', 'Link'),
             ('/about/', 'about', 'About') -->
 
@@ -64,9 +64,9 @@
                 <li>
                  <a class="navbar-brand" href="#">Matthew Cook</a>
                 </li>
-                {% for href, id, caption in navigation_bar %}
-                <li class="nav-item {% if id == active_page %} active {% endif %}">
-                <a class="nav-link" href="{{ href|e }}">{{ caption|e }}</a>
+                {% for topic in circles %}
+                <li class="nav-item">
+                <a class="nav-link" href="#{{ topic|e }}">{{topic}}</a>
                 </li>
                 {% endfor %}
             </ul>

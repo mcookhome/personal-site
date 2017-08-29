@@ -53,7 +53,7 @@ function make_satellites(div_name, satellites) {
             var grad_loc = radius * 0.375 * size_ratio;
             background = "radial-gradient(circle at " + grad_loc + "px " + grad_loc + "px, #5cabff" + ", #000)"; 
             console.log(background);
-            $(jquery_id).css("background", background);
+//            $(jquery_id).css("background", background);
         }
     }
 };
