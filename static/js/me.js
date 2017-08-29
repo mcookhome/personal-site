@@ -41,7 +41,7 @@ function timeout(cur_id, time) {
 
 function timed_fade(id_list) {
     for (i = 0; i < id_list.length; i++) {
-        time = 200 * (i+1);
+        time = 150 * (i+1);
         cur_id = id_list[i]; 
         timeout(cur_id, time);
     };
