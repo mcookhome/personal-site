@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    circles = ["About", "Education", "Career", "Interests", "Contact", "Resume"]
+    circles = ["About", "Career", "Education", "Interests", "Resume", "Contact"]
     return render_template("me.html", circles=circles)
 
 """
