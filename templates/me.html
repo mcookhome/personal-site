@@ -1,40 +1,73 @@
 {% extends "base.html" %}
 
 {% block head %}
-
+<script src="https://cdn.jsdelivr.net/jquery.textfill/0.6.0/jquery.textfill.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/scroll_down.css') }}">
 <style>
 
-.big-circle {
-    position: relative;
-    width: 40vh;
-    height: 40vh;
-    background-color: #ac5;
-    border-radius: 150px;
+.white-text {
+    color: white;
+    //text-shadow: 1px 1px black;
+    text-align: center;
+}
+
+.big-circle-text {
     -webkit-box-align: center;
     -webkit-box-pack: center;
     display: -webkit-box;
-    //background: radial-gradient(circle at 15vh 15vh, #fff, #000);
+    text-align: center;
+    width: 40vh;
+    height: 7vh;
 }
 
-.bgimg-1 {
+.small-circle-text {
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: -webkit-box;
+    text-align: center;
+    width: 15vh;
+    height: 6vh;
+}
+
+
+.big-circle {
     position: relative;
-    opacity: 0.65;
+    width: 45vh;
+    height: 45vh;
+    background-color: #ac5;
+    border-radius: 50%;
+    margin: 30px;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: -webkit-box;
+    background: radial-gradient(circle at center, #45A29E 64%,rgba(0,0,0,0) 80%);
+}
+
+
+.bgimg-1 {
+//    position: relative;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("{{ url_for('static', filename='planet.jpg') }}");  
+    background-attachment: fixed;
+    //background-image: url("{{ url_for('static', filename='stripe.jpg') }}");  
+    background-image: url("{{ url_for('static', filename='leaf.png') }}");  
     height: 100%;
+    background-color: #f3e9d2;
 }
 
 .small-circle {
     position: absolute;
-    width: 22vh;
-    height: 22vh;
-    background-color: #ac5;
+    text-align: center;
+    width: 17vh;
+    height: 17vh;
+    line-height: 17vh;
+    //background-color: #ac5;
     border-radius: 100px;
     -webkit-box-align: center;
     -webkit-box-pack: center;
     display: -webkit-box;
+    background: radial-gradient(circle at center, #66FCF1 64%,rgba(0,0,0,0) 80%);
 }
 
 .page-section {
@@ -63,18 +96,41 @@
 
 
 {% block content %}
-<div id="welcome-section" class="bgimg-12">
-    <div>
+<div id="welcome-section" class="bgimg-1">
         <div class="big-circle">
-            <h2> Matthew Cook </h2>
+            <div class="big-circle-text">
+                <span class="white-text"> Matthew Cook </span>
+            </div>
         </div>
+        <a href="#" class="scroll-down" address="true"></a>
+</div>
+<div class="page-section" id="About">
+
+    <div class="container">
+        <h1> wow </h1>
     </div>
+</div>
+
+<div class="page-section bgimg-1" id="Career">
 
 </div>
-<div class="page-section">
 
-    <div class="big-circle"></div>
+<div class="page-section" id="Education">
 
+</div>
+
+<div class="page-section bgimg-1" id="Interests">
+
+</div>
+
+<div class="page-section" id="Resume">
+
+</div>
+
+<div class="page-section bgimg-1" id="Contact">
+
+<!--    <div class="big-circle"></div>
+-->
 </div>
 
 <div hidden class="small-circle" id="reference">
@@ -83,6 +139,16 @@
 <script src="{{ url_for('static', filename='js/me.js') }}"></script>
 <script type="text/javascript">
     make_satellites('big-circle', {{circles|safe}});
+
+    var wait;
+
+    window.onresize = function() {
+        clearTimeout(wait);
+        wait = setTimeout(function() {
+                remake_satellites('big-circle', {{circles|safe}});
+                }, 100);
+    };
+
 </script>
 
 
