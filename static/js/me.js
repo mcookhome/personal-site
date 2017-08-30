@@ -27,6 +27,13 @@ $(document).ready(function(){
              return false;
          });
      });
+
+     $(function() {
+         $('.animate').click (function() {
+             $('html, body').animate({scrollTop: $('#' + $(this).text().replace(/ /g, '-').split('\n')[0]).offset().top }, 'slow');
+             return false;
+         });
+     });
  
 });
 
