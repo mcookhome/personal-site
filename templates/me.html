@@ -34,13 +34,15 @@
     position: relative;
     width: 45vh;
     height: 45vh;
-    background-color: #ac5;
+    //background-color: #ac5;
     border-radius: 50%;
     margin: 30px;
     -webkit-box-align: center;
     -webkit-box-pack: center;
     display: -webkit-box;
-    background: radial-gradient(circle at center, #45A29E 64%,rgba(0,0,0,0) 80%);
+    background-image: url("{{ url_for('static', filename='me.png') }}");
+    background-size: cover;
+    //background: radial-gradient(circle at center, #45A29E 64%,rgba(0,0,0,0) 80%);
 }
 
 
@@ -49,26 +51,28 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
     //background-image: url("{{ url_for('static', filename='stripe.jpg') }}");  
     height: 100%;
     background-color: #f3e9d2;
 }
 
 .image-section-1 {
-    background-image: url("{{ url_for('static', filename='material-bg/' ~ images[0] ~ '.jpg') }}");  
+    background-image: url("{{ url_for('static', filename='material-bg/top.jpg') }}");  
 }
 
 .image-section-2 {
     background-image: url("{{ url_for('static', filename='material-bg/' ~ images[1] ~ '.jpg') }}");  
+    background-attachment: fixed;
 }
 
 .image-section-3 {
     background-image: url("{{ url_for('static', filename='material-bg/' ~ images[2] ~ '.jpg') }}");  
+    background-attachment: fixed;
 }
 
 .image-section-4 {
     background-image: url("{{ url_for('static', filename='material-bg/' ~ images[3] ~ '.jpg') }}");  
+    background-attachment: fixed;
 }
 
 .small-circle {
@@ -87,10 +91,11 @@
 }
 
 .page-section {
-    height: 100vh;
+//    height: 100vh;
     -webkit-box-align: center;
     -webkit-box-pack: center;
     display: -webkit-box;
+    padding-bottom: 40px;
 }
 
 #Matthew-Cook {
@@ -101,6 +106,49 @@
     display: -webkit-box;
 }
 
+.img-circle {
+    border-radius: 50%;
+}
+
+.icon {
+    text-decoration: none;
+    opacity:0.5;
+    height: 64px;
+}
+
+.icon:hover {
+    opacity: 1;
+
+    /* Fade in */
+    transition: opacity;
+    transition-timing-function: ease-out;
+    transition-duration: 250ms;
+
+    -ms-transition:opacity;
+    -ms-transition-timing-function: ease-out;
+    -ms-transition-duration: 250ms;
+
+    -moz-transition:opacity;
+    -moz-transition-timing-function: ease-out;
+    -moz-transition-duration: 250ms;
+
+    -webkit-transition: opacity;
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 250ms;
+}
+
+.time-entry h6 {
+    text-transform: uppercase;
+    font-family: 'Titillium Web', sans-serif;
+    color: #737373;
+}
+
+#notifs {
+    z-index:10;
+    top: 10;
+    left: 50%;
+    position: absolute;
+}
 
 </style>
 
@@ -115,52 +163,193 @@
 <div id="Matthew-Cook" class="bgimg image-section-1">
         <div class="big-circle">
             <div class="big-circle-text">
-                <span class="white-text"> Matthew Cook </span>
+                <span class="white-text"></span>
             </div>
         </div>
         <a href="#" class="scroll-down" address="true"></a>
 </div>
+
+
 <div class="page-section" id="About">
 
     <div class="container">
-        <h1> wow </h1>
+        <div class="icons float-right">
+            <a class="icon" style="text-decoration:none;" href="mailto:mcookhome@gmail.com" target="_blank">
+                <img src="static/contact_icons/email_icon.png" width="32" alt="email">
+            </a>
+            <a class="icon" style="text-decoration:none;" href="https://www.linkedin.com/in/matthew-cook-b26a37147/" target="_blank">
+                <img src="static/contact_icons/linked_in_icon.png" width="32" alt="linkedin">
+            </a>
+            <a class="icon" style="text-decoration:none;" href="https://github.com/mcookhome" target="_blank">
+                <img src="static/contact_icons/github_icon.png" width="32" alt="github">
+            </a>
+            <a class="icon" style="text-decoration:none;" href="https://www.facebook.com/Mattthechef1" target="_blank">
+                <img src="static/contact_icons/facebook_icon.png" width="32" alt="facebook">
+            </a>
+        </div>
+
+        <h2> About me </h2>
+        <hr>
+        <p>{{tab|safe}} Hi! I'm Matthew Cook, an undergraduate student studying computer science and physics at Northeastern University. <br>{{tab|safe}}
+        Boston is my most recent stop on the East Coast. I was born in Atlanta, Georgia, and my family and I lived there until I was fourteen. Thanks to Atlanta, I love the Braves, Chick-fil-a, and when people say "Bless your heart". <br>{{tab|safe}}
+        After middle school, we packed up our things and made the journey up to New York City. I couldn't watch the Braves as easily, nor could I get a good Chick-fil-a chicken sandwich.<br>{{tab|safe}}
+        I had to adapt. In New York, I became a pizza elitist, took a liking to bubble tea, and, on a more serious note, found a passion in programming and graduated high school.<br>{{tab|safe}}
+        After high school, I moved again: to Boston, for college. I've been enjoying the smaller city's traditions and youthfulness.<br>{{tab|safe}}
+        I'm very proud of the places I've studied and worked, and I've been having trouble not going into detail here, as I'll be explaining them below.<br>{{tab|safe}}
+        For now, I'm happy to welcome you to my website!
+        </p>
     </div>
 </div>
 
 <div class="page-section bgimg image-section-2" id="Career">
+    <div class="container">
+        <h2> Career </h2>
+        <hr>
+        <div class="time-entry">
+            <img style="margin-right:50px;" class="img-circle float-left" src="static/employer_icons/uptodate_icon.png" alt="UpToDate" width="128px" height="128px">
+            <h6 class="float-right"> July 2017 - September 2017</h6>
+            <h5>UpToDate</h4>
+            <h6>DevOps Intern</h6>
+            <ul>
+                <li>Designed a high-availability JIRA setup with a hot standby PostgreSQL database system</li>
+                <li>Developed a script to automate checking the status of multiple servers by scraping JSON/HTML</li>
+                <li>Automated Apache load-balancing using Python</li>
+            </ul>
+            <hr width="80%">
+        </div>
+        <div class="time-entry">
+            <img style="margin-right:50px;" class="img-circle float-left" src="static/employer_icons/tripadvisor_icon.png" alt="TripAdvisor" width="128px" height="128px">
+            <h6 class="float-right"> January 2017 - June 2017</h6>
+            <h5>TripAdvisor</h4>
+            <h6>Security Operations Co-op</h6>
+            <ul>
+                <li>Designed a tool in conjunction with third-party representatives to manage scanning utilities</li>
+                <li>Analyzed big data by creating security "watchers" with Elastic Query Language, YAML, and Json</li>
+                <li>Improved security operations website using Python (Tornado) and HTML</li>
+            </ul>
+            <hr width="80%">
+        </div>
+        <div class="time-entry">
+            <img style="margin-right:50px;" class="img-circle float-left" src="static/employer_icons/codesters_icon.png" alt="Codesters" width="128px" height="128px">
+            <h6 class="float-right"> June 2015 - September 2015</h6>
+            <h5>Codesters</h4>
+            <h6>Software Development Intern</h6>
+            <ul>
+                <li>Converted the online graphics library from JavaScript to Python using Tkinter</li>
+                <li>Collaborated with a team to develop the Python library</li>
+                <li>Deployed the offline Python version as a Pip module for public use</li>
+            </ul>
+            <hr width="80%">
+        </div>
+        <div class="time-entry">
+            <img style="margin-right:50px;" class="img-circle float-left" src="static/employer_icons/morganstanley_icon.png" alt="Morgan Stanley" width="128px" height="128px">
+            <h6 class="float-right"> July 2014 - August 2014</h6>
+            <h5>Morgan Stanley</h4>
+            <h6>Data Visualization Intern</h6>
+            <ul>
+                <li>Created data visualizations in an originally unfamiliar software called Tableau</li>
+                <li>Analyzed data by creating visualizations showing inefficiencies in computing time and storage</li>
+            </ul>
+            <hr width="80%">
+        </div>
+    </div>
 
 </div>
 
 <div class="page-section" id="Education">
+    <div class="container">
+        <h2>Education</h2>
+        <hr>
+        <div class="time-entry">
+            <img style="margin-right:50px;" class="img-circle float-left" src="static/school_icons/edinburgh_icon.png" alt="Edinburgh" width="128px" height="128px">
+            <h6 class="float-right"> September 2017 - December 2017</h6>
+            <h5>University of Edinburgh</h4>
+            <h6>Study Abroad</h6>
+            <br><br><br>
+            <hr width="80%">
+        </div>
+        <div class="time-entry">
+            <img style="margin-right:50px;" class="img-circle float-left" src="static/school_icons/northeastern_icon.png" alt="Northeastern" width="128px" height="128px">
+            <h6 class="float-right"> September 2015 - Present</h6>
+            <h5>Northeastern University</h4>
+            <h6>Candidate for a Bachelor of Science in Computer Science and Physics</h6>
+            <ul>
+                <li>Civic Engagement Program</li>
+                <li>Dean's List</li>
+                <li>Lawrence Award</li>
+            </ul>
+            <hr width="80%">
+        </div>
+        <div class="time-entry">
+            <img style="margin-right:50px;" class="img-circle float-left" src="static/school_icons/stuyvesant_icon.png" alt="Stuyvesant" width="128px" height="128px">
+            <h6 class="float-right"> September 2011 - June 2015</h6>
+            <h5>Stuyvesant High School</h4>
+            <h6>Stuyvesant Diploma</h6>
+            <ul>
+                <li>ARISTA</li>
+                <li>Varsity Baseball</li>
+                <li>President of Super Smash Bros. Club</li>
+            </ul>
+            <hr width="80%">
+        </div>
 
+    </div>
 </div>
 
 <div class="page-section bgimg image-section-3" id="Interests">
 
     <div class="container">
-        wow oooooweee wow that's some goooood stuff
-        <br> <br> <br> <hr>
-        oooooooweee 
-        <br>
+        <h2>Interests</h2>
+        <hr>
+        <div class="time-entry">
+            <img style="margin-right:50px;" class="img-circle float-left" src="static/ultimate.png" alt="Ultimate" width="128px" height="128px">
+            <h5>Ultimate Frisbee</h4>
+            <ul>
+                <li>Northeastern A Team</li>
+                <li>Massachusetts U19 all-star team captain</li>
+                <li>All-state NY 2015</li>
+                <li>U-20 USA National Team Tryout</li>
+            </ul>
+            <hr width="80%">
+        </div>
+
     </div>
 
 </div>
 
 <div class="page-section" id="Resume">
-
+    <div class="container">
+        <h2> Resume </h2>
+        <div id="resume-pdf">
+        </div>
+    
+    </div>
 </div>
 
 <div class="page-section bgimg image-section-4" id="Contact">
 
 
 
-    <div class="container">
-    <div class="float-right" id="notifs">
-
+    <div class="container w-75">
+        <div class="icons float-right">
+            <a class="icon" style="text-decoration:none;" href="mailto:mcookhome@gmail.com" target="_blank">
+                <img src="static/contact_icons/email_icon.png" width="32" alt="email">
+            </a>
+            <a class="icon" style="text-decoration:none;" href="https://www.linkedin.com/in/matthew-cook-b26a37147/" target="_blank">
+                <img src="static/contact_icons/linked_in_icon.png" width="32" alt="linkedin">
+            </a>
+            <a class="icon" style="text-decoration:none;" href="https://github.com/mcookhome" target="_blank">
+                <img src="static/contact_icons/github_icon.png" width="32" alt="github">
+            </a>
+            <a class="icon" style="text-decoration:none;" href="https://www.facebook.com/Mattthechef1" target="_blank">
+                <img src="static/contact_icons/facebook_icon.png" width="32" alt="facebook">
+            </a>
+        </div>
+        
+    <div class="float-right " id="notifs">
     </div>
-    <h2 class="float-left"> Contact </h2>
-        <br>
-        <br>
+
+    <h2 > Contact me</h2>
     <div id="form-content"> 
         <form method="post" id="contact-form" action="{{url_for('me')}}" class="form-control">
         <br>Name
@@ -187,7 +376,9 @@
     </center>
     </form>
     </div>
+
     </div>
+
 
 <!--    <div class="big-circle"></div>
 -->
@@ -208,6 +399,8 @@
                 remake_satellites('big-circle', {{circles|safe}});
                 }, 100);
     };
+
+PDFObject.embed("{{ url_for('static', filename='pdf/resume.pdf') }}", "#resume-pdf", {height: "70vh"});
 
 </script>
 
