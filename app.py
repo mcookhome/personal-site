@@ -1,11 +1,16 @@
 from flask import Flask, render_template, request
+import random
+from util import credentials
 
 app = Flask(__name__)
 
 @app.route("/")
-def home():
+def me():
     circles = ["About", "Career", "Education", "Interests", "Resume", "Contact"]
-    return render_template("me.html", circles=circles)
+    images = random.sample(xrange(1, 41), 4)
+    print images
+    print credentials.login['email']
+    return render_template("me.html", circles=circles, images=images)
 
 """
 @app.route("/status", methods=['GET', 'POST'])

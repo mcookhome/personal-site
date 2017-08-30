@@ -44,16 +44,31 @@
 }
 
 
-.bgimg-1 {
+.bgimg {
 //    position: relative;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     //background-image: url("{{ url_for('static', filename='stripe.jpg') }}");  
-    background-image: url("{{ url_for('static', filename='leaf.png') }}");  
     height: 100%;
     background-color: #f3e9d2;
+}
+
+.image-section-1 {
+    background-image: url("{{ url_for('static', filename='material-bg/' ~ images[0] ~ '.jpg') }}");  
+}
+
+.image-section-2 {
+    background-image: url("{{ url_for('static', filename='material-bg/' ~ images[1] ~ '.jpg') }}");  
+}
+
+.image-section-3 {
+    background-image: url("{{ url_for('static', filename='material-bg/' ~ images[2] ~ '.jpg') }}");  
+}
+
+.image-section-4 {
+    background-image: url("{{ url_for('static', filename='material-bg/' ~ images[3] ~ '.jpg') }}");  
 }
 
 .small-circle {
@@ -97,7 +112,7 @@
 
 
 {% block content %}
-<div id="welcome-section" class="bgimg-1">
+<div id="welcome-section" class="bgimg image-section-1">
         <div class="big-circle">
             <div class="big-circle-text">
                 <span class="white-text"> Matthew Cook </span>
@@ -112,7 +127,7 @@
     </div>
 </div>
 
-<div class="page-section bgimg-1" id="Career">
+<div class="page-section bgimg image-section-2" id="Career">
 
 </div>
 
@@ -120,7 +135,7 @@
 
 </div>
 
-<div class="page-section bgimg-1" id="Interests">
+<div class="page-section bgimg image-section-3" id="Interests">
 
     <div class="container">
         wow oooooweee wow that's some goooood stuff
@@ -135,7 +150,40 @@
 
 </div>
 
-<div class="page-section bgimg-1" id="Contact">
+<div class="page-section bgimg image-section-4" id="Contact">
+
+
+    <div class="container">
+    <h2 class="float-left"> Contact </h2>
+        <br>
+        <br>
+    <div id="form-content"> 
+        <form method="post" id="top-form" action="{{url_for('me')}}" class="form-control">
+        <br>Name
+        <div class="form-group">
+            <label class="sr-only" for="name">Name:</label>
+            <input type="text" class="form-control" id="name" name="name">
+        </div>
+
+        <br>Email
+        <div class="form-group">
+            <label class="sr-only" for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email">
+        </div>
+
+        <br>Message
+        <div class="form-group">
+            <label class="sr-only" for="message">Message:</label>
+            <textarea type="email" class="form-control" id="message" name="message" rows="5"></textarea>
+        </div>
+
+        <br>
+        <center>
+        <button type="submit" id="send" class="btn btn-info">Send</button>
+    </center>
+    </form>
+    </div>
+    </div>
 
 <!--    <div class="big-circle"></div>
 -->
