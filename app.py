@@ -7,18 +7,18 @@ app = Flask(__name__)
 @app.route("/", methods=['GET', 'POST'])
 def me():
     circles = ["About", "Career", "Education", "Interests", "Resume", "Contact"]
-    images = random.sample(xrange(1, 41), 4)
+    images = random.sample(xrange(1, 40), 4)
     print images
     email = credentials.login['email']
     password = credentials.login['password']
+    tab = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
     if request.method == 'POST':
         name = request.json["name"]
         form_email = request.json["email"]
         message = request.json["message"]
         send_email.send(email, email, name + " (" + form_email + ") has sent you a message!", message, password)
-        return render_template("me.html", circles=circles, images=images)
     
-    return render_template("me.html", circles=circles, images=images)
+    return render_template("me.html", circles=circles, images=images, tab=tab)
 
 """
 @app.route("/status", methods=['GET', 'POST'])
