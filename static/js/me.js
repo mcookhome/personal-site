@@ -1,8 +1,9 @@
 $(document).ready(function(){
     $('.big-circle-text').textfill({});
     $('.big-circle-text').css({marginTop: '-=15px'});    
+    $('.container').css({marginTop: '+=40px'});    
 
-    var success_msg = ' <div class="alert alert-success alert-dismissable fade show" role="alert">\
+    var success_msg = ' <div class="alert alert-success alert-dismissable fade show"  role="alert">\
            <button type="button" class="close" data-dismiss="alert" aria-label="Close">\
            <span aria-hidden="true">&times;</span>\
            </button>';
@@ -21,21 +22,22 @@ $(document).ready(function(){
 
      $(function() {
          $('.scroll-down').click (function() {
-             $('html, body').animate({scrollTop: $('#About').offset().top }, 'slow');
+             $('html, body').animate({scrollTop: $('#About').offset().top - 30}, 'slow');
              return false;
          });
      });
 
      $(function() {
          $('.removable').click (function() {
-             $('html, body').animate({scrollTop: $('#' + $(this).text()).offset().top }, 'slow');
+             $('html, body').animate({scrollTop: $('#' + $(this).text()).offset().top - 30}, 'slow');
              return false;
          });
      });
 
      $(function() {
          $('.animate').click (function() {
-             $('html, body').animate({scrollTop: $('#' + $(this).text().replace(/ /g, '-').split('\n')[0]).offset().top }, 'slow');
+             console.log($('#' + $(this).text().replace(/ /g, '-').split('\n')[0]).offset().top);
+             $('html, body').animate({scrollTop: $('#' + $(this).text().replace(/ /g, '-').split('\n')[0]).offset().top - 30}, 'slow');
              return false;
          });
      });
@@ -126,7 +128,7 @@ function remake_satellites(div_name, satellites) {
     make_satellites('big-circle', satellites);
     $(function() {
         $('.removable').click (function() {
-            $('html, body').animate({scrollTop: $('#' + $(this).text()).offset().top }, 'slow');
+            $('html, body').animate({scrollTop: $('#' + $(this).text()).offset().top - 30}, 'slow');
             return false;
         });
     });
