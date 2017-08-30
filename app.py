@@ -1,15 +1,23 @@
 from flask import Flask, render_template, request
 import random
-from util import credentials
+from util import credentials, send_email
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def me():
     circles = ["About", "Career", "Education", "Interests", "Resume", "Contact"]
     images = random.sample(xrange(1, 41), 4)
     print images
-    print credentials.login['email']
+    email = credentials.login['email']
+    password = credentials.login['password']
+    if request.method == 'POST':
+        name = request.json["name"]
+        form_email = request.json["email"]
+        message = request.json["message"]
+        send_email.send(email, email, name + " (" + form_email + ") has sent you a message!", message, password)
+        return render_template("me.html", circles=circles, images=images)
+    
     return render_template("me.html", circles=circles, images=images)
 
 """

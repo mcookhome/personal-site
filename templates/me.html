@@ -153,12 +153,16 @@
 <div class="page-section bgimg image-section-4" id="Contact">
 
 
+
     <div class="container">
+    <div class="float-right" id="notifs">
+
+    </div>
     <h2 class="float-left"> Contact </h2>
         <br>
         <br>
     <div id="form-content"> 
-        <form method="post" id="top-form" action="{{url_for('me')}}" class="form-control">
+        <form method="post" id="contact-form" action="{{url_for('me')}}" class="form-control">
         <br>Name
         <div class="form-group">
             <label class="sr-only" for="name">Name:</label>
@@ -174,7 +178,7 @@
         <br>Message
         <div class="form-group">
             <label class="sr-only" for="message">Message:</label>
-            <textarea type="email" class="form-control" id="message" name="message" rows="5"></textarea>
+            <textarea class="form-control" id="message" name="message" rows="5"></textarea>
         </div>
 
         <br>

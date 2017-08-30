@@ -2,6 +2,11 @@ $(document).ready(function(){
     $('.big-circle-text').textfill({});
     $('.big-circle-text').css({marginTop: '-=15px'});    
 
+    var success_msg = ' <div class="alert alert-success alert-dismissable fade show" role="alert">\
+           <button type="button" class="close" data-dismiss="alert" aria-label="Close">\
+           <span aria-hidden="true">&times;</span>\
+           </button>';
+
     $(function() {
         $(window).scroll(function() {
             var trigger_height = 100;
@@ -32,6 +37,31 @@ $(document).ready(function(){
          $('.animate').click (function() {
              $('html, body').animate({scrollTop: $('#' + $(this).text().replace(/ /g, '-').split('\n')[0]).offset().top }, 'slow');
              return false;
+         });
+     });
+
+     $(function() {
+         $('#contact-form').submit(function(event) {
+             event.preventDefault();
+             var url = $(this).attr('action');
+             var params = {};
+             params["name"] = $("#name").val();
+             params["email"] = $("#email").val();
+             params["message"] = $("#message").val();
+             console.log(params);
+             $.ajax({
+                 type: 'POST',
+                 url: url,
+                 data: JSON.stringify(params, null, '\t'),
+                 contentType:'application/json;charset=UTF-8',
+                 success: function(result) {
+                     $('#contact-form').trigger('reset');
+                     $('#notifs').append(success_msg + "<strong>Sent!</strong> I'll respond at the email you provided.  </div>");
+                 },
+                 error: function(error) {
+                     console.log(error);
+                 }
+             });
          });
      });
  
