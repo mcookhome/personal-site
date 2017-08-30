@@ -42,6 +42,10 @@
             display: none;
         }
 
+        .animate {
+            cursor: pointer;
+        }
+
     </style>
 
     {% block head %}
@@ -66,11 +70,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li>
-                 <a class="navbar-brand" href="#">Matthew Cook</a>
+                 <div class="navbar-brand animate">Matthew Cook</a>
                 </li>
                 {% for topic in circles %}
                 <li class="nav-item">
-                <a class="nav-link" href="#{{ topic|e }}">{{topic}}</a>
+                    <div class="nav-link animate">{{topic}}</div>
+                <!-- <a class="nav-link" href="#{{ topic|e }}">{{topic}}</a> -->
                 </li>
                 {% endfor %}
             </ul>
