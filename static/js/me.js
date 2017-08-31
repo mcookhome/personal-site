@@ -42,6 +42,7 @@ $(document).ready(function(){
          });
      });
 
+
      $(function() {
          $('#contact-form').submit(function(event) {
              event.preventDefault();
@@ -50,7 +51,8 @@ $(document).ready(function(){
              params["name"] = $("#name").val();
              params["email"] = $("#email").val();
              params["message"] = $("#message").val();
-             console.log(params);
+             $('#send').hide();
+             $('.cssload-container').show(); 
              $.ajax({
                  type: 'POST',
                  url: url,
@@ -59,6 +61,9 @@ $(document).ready(function(){
                  success: function(result) {
                      $('#contact-form').trigger('reset');
                      $('#notifs').append(success_msg + "<strong>Sent!</strong> I'll respond at the email you provided.  </div>");
+                     $('.cssload-container').hide(); 
+                     $('#send').show();
+
                  },
                  error: function(error) {
                      console.log(error);
