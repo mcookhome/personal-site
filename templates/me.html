@@ -3,6 +3,7 @@
 {% block head %}
 <script src="https://cdn.jsdelivr.net/jquery.textfill/0.6.0/jquery.textfill.min.js"></script>
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/scroll_down.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/loading.css') }}">
 <style>
 
 .white-text {
@@ -108,6 +109,7 @@
 
 .img-circle {
     border-radius: 50%;
+    margin-bottom: 15px;
 }
 
 .icon {
@@ -174,9 +176,6 @@
 
     <div class="container">
         <div class="icons float-right">
-            <a class="icon" style="text-decoration:none;" href="mailto:mcookhome@gmail.com" target="_blank">
-                <img src="static/contact_icons/email_icon.png" width="32" alt="email">
-            </a>
             <a class="icon" style="text-decoration:none;" href="https://www.linkedin.com/in/matthew-cook-b26a37147/" target="_blank">
                 <img src="static/contact_icons/linked_in_icon.png" width="32" alt="linkedin">
             </a>
@@ -206,7 +205,9 @@
         <h2> Career </h2>
         <hr>
         <div class="time-entry">
+        <a href="https://www.uptodate.com" style="text-decoration:none;" target="_blank">
             <img style="margin-right:50px;" class="img-circle float-left" src="static/employer_icons/uptodate_icon.png" alt="UpToDate" width="128px" height="128px">
+        </a>
             <h6 class="float-right"> July 2017 - September 2017</h6>
             <h5>UpToDate</h4>
             <h6>DevOps Intern</h6>
@@ -218,7 +219,9 @@
             <hr width="80%">
         </div>
         <div class="time-entry">
+        <a href="https://www.tripadvisor.com/" style="text-decoration:none;" target="_blank">
             <img style="margin-right:50px;" class="img-circle float-left" src="static/employer_icons/tripadvisor_icon.png" alt="TripAdvisor" width="128px" height="128px">
+        </a>
             <h6 class="float-right"> January 2017 - June 2017</h6>
             <h5>TripAdvisor</h4>
             <h6>Security Operations Co-op</h6>
@@ -230,7 +233,9 @@
             <hr width="80%">
         </div>
         <div class="time-entry">
+        <a href="https://www.codesters.com/" style="text-decoration:none;" target="_blank">
             <img style="margin-right:50px;" class="img-circle float-left" src="static/employer_icons/codesters_icon.png" alt="Codesters" width="128px" height="128px">
+        </a>
             <h6 class="float-right"> June 2015 - September 2015</h6>
             <h5>Codesters</h4>
             <h6>Software Development Intern</h6>
@@ -242,7 +247,9 @@
             <hr width="80%">
         </div>
         <div class="time-entry">
+        <a href="https://www.morganstanley.com/" style="text-decoration:none;" target="_blank">
             <img style="margin-right:50px;" class="img-circle float-left" src="static/employer_icons/morganstanley_icon.png" alt="Morgan Stanley" width="128px" height="128px">
+        </a>
             <h6 class="float-right"> July 2014 - August 2014</h6>
             <h5>Morgan Stanley</h4>
             <h6>Data Visualization Intern</h6>
@@ -261,7 +268,9 @@
         <h2>Education</h2>
         <hr>
         <div class="time-entry">
+        <a href="http://www.ed.ac.uk/" style="text-decoration:none;" target="_blank">
             <img style="margin-right:50px;" class="img-circle float-left" src="static/school_icons/edinburgh_icon.png" alt="Edinburgh" width="128px" height="128px">
+        </a>
             <h6 class="float-right"> September 2017 - December 2017</h6>
             <h5>University of Edinburgh</h4>
             <h6>Study Abroad</h6>
@@ -269,7 +278,9 @@
             <hr width="80%">
         </div>
         <div class="time-entry">
+        <a href="http://www.northeastern.edu/" style="text-decoration:none;" target="_blank">
             <img style="margin-right:50px;" class="img-circle float-left" src="static/school_icons/northeastern_icon.png" alt="Northeastern" width="128px" height="128px">
+        </a>
             <h6 class="float-right"> September 2015 - Present</h6>
             <h5>Northeastern University</h4>
             <h6>Candidate for a Bachelor of Science in Computer Science and Physics</h6>
@@ -281,7 +292,9 @@
             <hr width="80%">
         </div>
         <div class="time-entry">
+        <a href="http://stuy.enschool.org/" style="text-decoration:none;" target="_blank">
             <img style="margin-right:50px;" class="img-circle float-left" src="static/school_icons/stuyvesant_icon.png" alt="Stuyvesant" width="128px" height="128px">
+        </a>
             <h6 class="float-right"> September 2011 - June 2015</h6>
             <h5>Stuyvesant High School</h4>
             <h6>Stuyvesant Diploma</h6>
@@ -340,12 +353,64 @@
 
 </div>
 
-<div class="page-section" id="Resume">
-    <div class="container">
-        <h2> Resume </h2>
-        <div id="resume-pdf">
-        </div>
-    
+<div class="page-section" id="Skills">
+       <div class="container">
+        <h2> Skills </h2>
+        <hr>
+        <a href="https://www.python.org/" style="text-decoration:none;" target="_blank">
+                <img style="margin-right:50px;" class="img-circle float-left" src="static/skill_icons/python_icon.png" alt="Python" width="128px" height="128px">
+            </a>
+        <a href="http://flask.pocoo.org/" style="text-decoration:none;" target="_blank">
+                <img style="margin-right:50px;" class="img-circle float-left" src="static/skill_icons/flask_icon.jpg" alt="Flask" width="128px" height="128px">
+            </a>
+        <a href="http://www.tornadoweb.org" style="text-decoration:none;" target="_blank">
+                <img style="margin-right:50px;" class="img-circle float-left" src="static/skill_icons/tornado_icon.jpg" alt="Tornado" width="128px" height="128px">
+            </a>
+        <a href="https://www.java.com" style="text-decoration:none;" target="_blank">
+                <img style="margin-right:50px;" class="img-circle float-left" src="static/skill_icons/java_icon.png" alt="Java" width="128px" height="128px">
+            </a>
+        <a href="https://www.w3schools.com/html/" style="text-decoration:none;" target="_blank">
+                <img style="margin-right:50px;" class="img-circle float-left" src="static/skill_icons/html_icon.png" alt="HTML" width="128px" height="128px">
+            </a>
+        <a href="https://www.w3schools.com/css/" style="text-decoration:none;" target="_blank">
+                <img style="margin-right:50px;" class="img-circle float-left" src="static/skill_icons/css_icon.png" alt="CSS" width="128px" height="128px">
+            </a>
+        <a href="https://www.javascript.com/" style="text-decoration:none;" target="_blank">
+                <img style="margin-right:50px;" class="img-circle float-left" src="static/skill_icons/javascript_icon.png" alt="JavaScript" width="128px" height="128px">
+            </a>
+        <a href="https://jquery.com/" style="text-decoration:none;" target="_blank">
+                <img style="margin-right:50px;" class="img-circle float-left" src="static/skill_icons/jquery_icon.png" alt="JQuery" width="128px" height="128px">
+            </a>
+        <a href="http://www.json.org/" style="text-decoration:none;" target="_blank">
+                <img style="margin-right:50px;" class="img-circle float-left" src="static/skill_icons/json_icon.jpg" alt="JSON" width="128px" height="128px">
+            </a>
+        <a href="http://www.yaml.org/start.html" style="text-decoration:none;" target="_blank">
+                <img style="margin-right:50px;" class="img-circle float-left" src="static/skill_icons/yaml_icon.png" alt="YAML" width="128px" height="128px">
+            </a>
+        <a href="https://www.elastic.co/" style="text-decoration:none;" target="_blank">
+                <img style="margin-right:50px;" class="img-circle float-left" src="static/skill_icons/eql_icon.jpg" alt="ElasticSearch" width="128px" height="128px">
+            </a>
+        <a href="https://www.tableau.com/" style="text-decoration:none;" target="_blank">
+                <img style="margin-right:50px;" class="img-circle float-left" src="static/skill_icons/tableau_icon.png" alt="Tableau" width="128px" height="128px">
+            </a>
+        <a href="https://www.atlassian.com/" style="text-decoration:none;" target="_blank">
+                <img style="margin-right:50px;" class="img-circle float-left" src="static/skill_icons/atlassian_icon.jpg" alt="Atlassian Products" width="128px" height="128px">
+            </a>
+        <a href="https://git-scm.com/" style="text-decoration:none;" target="_blank">
+                <img style="margin-right:50px;" class="img-circle float-left" src="static/skill_icons/git_icon.jpg" alt="Git" width="128px" height="128px">
+            </a>
+        <a href="https://www.postgresql.org/" style="text-decoration:none;" target="_blank">
+                <img style="margin-right:50px;" class="img-circle float-left" src="static/skill_icons/postgres_icon.png" alt="PostgreSQL" width="128px" height="128px">
+            </a>
+        <a href="https://www.linux.org/" style="text-decoration:none;" target="_blank">
+                <img style="margin-right:50px;" class="img-circle float-left" src="static/skill_icons/linux_icon.jpg" alt="Linux" width="128px" height="128px">
+            </a>
+        <a href="https://racket-lang.org/" style="text-decoration:none;" target="_blank">
+                <img style="margin-right:50px;" class="img-circle float-left" src="static/skill_icons/racket_icon.png" alt="Racket" width="128px" height="128px">
+            </a>
+   <!--     <div id="resume-pdf">
+        </div> -->
+
     </div>
 </div>
 
@@ -355,9 +420,6 @@
 
     <div class="container w-75">
         <div class="icons float-right">
-            <a class="icon" style="text-decoration:none;" href="mailto:mcookhome@gmail.com" target="_blank">
-                <img src="static/contact_icons/email_icon.png" width="32" alt="email">
-            </a>
             <a class="icon" style="text-decoration:none;" href="https://www.linkedin.com/in/matthew-cook-b26a37147/" target="_blank">
                 <img src="static/contact_icons/linked_in_icon.png" width="32" alt="linkedin">
             </a>
@@ -393,18 +455,18 @@
             <textarea class="form-control" id="message" name="message" rows="5"></textarea>
         </div>
 
-        <br>
         <center>
-        <button type="submit" id="send" class="btn btn-info">Send</button>
-    </center>
-    </form>
+            <div class="button-div" style="height:300">
+            <div class="cssload-container" style="display:none">
+                <div class="cssload-loading"><i></i><i></i></div>
+            </div>
+            <button type="submit" id="send" class="btn btn-info btn-lg">Send</button>
+        </div>
     </div>
 
     </div>
 
 
-<!--    <div class="big-circle"></div>
--->
 </div>
 
 <div hidden class="small-circle" id="reference">
@@ -423,7 +485,7 @@
                 }, 100);
     };
 
-PDFObject.embed("{{ url_for('static', filename='pdf/resume.pdf') }}", "#resume-pdf", {height: "70vh"});
+//PDFObject.embed("{{ url_for('static', filename='pdf/resume.pdf') }}", "#resume-pdf", {height: "70vh"});
 
 </script>
 
