@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/", methods=['GET', 'POST'])
 def me():
-    circles = ["About", "Career", "Education", "Interests", "Resume", "Contact"]
+    circles = ["About", "Career", "Education", "Interests", "Skills", "Contact"]
     images = random.sample(xrange(1, 40), 4)
     print images
     email = credentials.login['email']
