@@ -24,7 +24,6 @@ We need to create a credentials file in the util folder with this structure:
 login = {
     "email": "<your_email>",
     "password": "<your_password>"
-
 }
 ```  
 
