@@ -35,7 +35,6 @@ Finally, we can run the app:
  * Restarting with stat  
  * Debugger is active!  
  * Debugger PIN: 133-415-911  
-
 ```
   
 If you want to be able to send emails, you have to turn on 'less secure apps' for your email address.
