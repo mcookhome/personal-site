@@ -17,7 +17,7 @@ Next, we need to enter the directory and install the requirements:
 [mcook@mcook04 personal-site]$ sudo pip install -r requirements.txt  
 `  
 
-We need to create a credentials file in the util folder with this structure:
+We need to create a credentials file in the util folder with this structure:  
 `
 [mcook@mcook04 personal-site]$ vi util/credentials.py
 login = {
@@ -29,11 +29,11 @@ login = {
 
 Finally, we can run the app:  
 `
-[mcook@mcook04 personal-site]$ python app.py
- * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
- * Restarting with stat
- * Debugger is active!
- * Debugger PIN: 133-415-911
+[mcook@mcook04 personal-site]$ python app.py  
+ * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)  
+ * Restarting with stat  
+ * Debugger is active!  
+ * Debugger PIN: 133-415-911  
 
 `
   
