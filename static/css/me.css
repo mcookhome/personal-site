@@ -9,8 +9,8 @@
     -webkit-box-pack: center;
     display: -webkit-box;
     text-align: center;
-    width: 40vh;
-    height: 7vh;
+    width: 40vmin;
+    height: 7vmin;
 }
 
 .small-circle-text {
@@ -18,8 +18,8 @@
     -webkit-box-pack: center;
     display: -webkit-box;
     text-align: center;
-    width: 15vh;
-    height: 6vh;
+    width: 15vmin;
+    height: 6vmin;
 }
 
 
@@ -36,9 +36,9 @@
 .small-circle {
     position: absolute;
     text-align: center;
-    width: 17vh;
-    height: 17vh;
-    line-height: 17vh;
+    width: 15vmin;
+    height: 15vmin;
+    line-height: 15vmin;
     //background-color: #ac5;
     border-radius: 100px;
     -webkit-box-align: center;
@@ -49,7 +49,7 @@
 }
 
 .page-section {
-//    height: 100vh;
+//    height: 100vmin;
     -webkit-box-align: center;
     -webkit-box-pack: center;
     display: -webkit-box;
@@ -57,7 +57,7 @@
 }
 
 #Matthew-Cook {
-    height: 100vh;
+    height: 100vmin;
     //background-color: green;
     -webkit-box-align: center;
     -webkit-box-pack: center;
