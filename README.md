@@ -6,6 +6,7 @@ Running on http://mcook.me
 #### (Assuming you have git, python, and pip)
 
 First, clone the repo:  
+   
 `
 [mcook@mcook04 ~]$ git clone https://github.com/mcookhome/personal-site.git
 `  
@@ -13,7 +14,7 @@ First, clone the repo:
 Next, we need to enter the directory and install the requirements:
 
 `
-[mcook@mcook04 ~]$ cd personal-site/  
+[mcook@mcook04 ~]$ cd personal-site/   
 [mcook@mcook04 personal-site]$ sudo pip install -r requirements.txt  
 `  
 
