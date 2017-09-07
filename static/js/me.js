@@ -104,7 +104,7 @@ function make_satellites(div_name, satellites) {
         var result = [];
         for (var i = 1; i <= satellites.length; ++i) {
             var small_circle = document.createElement('div');
-            small_circle.className = 'small-circle removable';
+            small_circle.className = 'clickable small-circle removable';
             small_circle.style.position = 'absolute';
             var y = Math.sin((div * i) * (Math.PI / 180)) * radius;
             var x = Math.cos((div * i) * (Math.PI / 180)) * radius;

@@ -69,11 +69,27 @@
     margin-bottom: 15px;
 }
 
+.clickable {
+    -webkit-transition: all 250ms ease;
+    transition: all 250ms ease;
+    -ms-transition: all 250ms ease;
+    -moz-transition: all 250ms ease;
+}
+
+.clickable:focus,
+.clickable:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.24);
+}
+
 .icon {
     text-decoration: none;
     opacity:0.5;
     height: 64px;
 }
+
 
 .icon:hover {
     opacity: 1;
