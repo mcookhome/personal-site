@@ -17,7 +17,7 @@ def send(from_addr, to_addr, subject, message, password):
     msg["From"] = from_addr
     msg["To"] = to_addr
     msg["Subject"] = "[mcook.me]" + subject
-    msg.attach(MIMEText(message.encode('utf-8'), 'html', 'UTF-8'))
+    msg.attach(MIMEText(message.encode('utf-8'), 'plain', 'UTF-8'))
 
     smtp_server.sendmail(from_addr, to_addr, msg.as_string())
     smtp_server.quit()
