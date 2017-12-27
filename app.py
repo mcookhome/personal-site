@@ -10,7 +10,7 @@ app = Flask(__name__)
 def me():
     """ Route to define my home page, handling get and post requests """
 
-    circles = ["About", "Career", "Education", "Interests", "Skills", "Contact"]
+    circles = ["About", "Career", "Education", "Skills", "Interests", "Contact"]
     images = random.sample(xrange(1, 40), 4)
     email = credentials.login['email']
     password = credentials.login['password']
@@ -25,4 +25,4 @@ def me():
     return render_template("me.html", circles=circles, images=images, tab=tab)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", debug=True)
+    app.run(debug=True)
