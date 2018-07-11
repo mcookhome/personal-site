@@ -117,11 +117,6 @@ function make_satellites(div_name, satellites) {
             var child = circle_div.appendChild(small_circle);
             jquery_id = '#' + new_id;
 
-            //timed_fade(jquery_id);
-            //var size_ratio = $(jquery_id).height() / $('.big-circle').height();
-            //var grad_loc = radius * 0.375 * size_ratio;
-            //background = "radial-gradient(circle at " + grad_loc + "px " + grad_loc + "px, #5cabff" + ", #000)"; 
-//            $(jquery_id).css("background", background);
             result.push(jquery_id); 
         }
         timed_fade(result);

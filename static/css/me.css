@@ -1,6 +1,5 @@
 .white-text {
     color: white;
-    //text-shadow: 1px 1px black;
     text-align: center;
 }
 
@@ -24,11 +23,9 @@
 
 
 .bgimg {
-//    position: relative;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    //background-image: url("{{ url_for('static', filename='stripe.jpg') }}");  
     height: 100%;
     background-color: #f3e9d2;
 }
@@ -39,7 +36,6 @@
     width: 15vmin;
     height: 15vmin;
     line-height: 15vmin;
-    //background-color: #ac5;
     border-radius: 100px;
     -webkit-box-align: center;
     -webkit-box-pack: center;
@@ -49,7 +45,6 @@
 }
 
 .page-section {
-//    height: 100vmin;
     -webkit-box-align: center;
     -webkit-box-pack: center;
     display: -webkit-box;
@@ -58,7 +53,6 @@
 
 #Matthew-Cook {
     height: 100vmin;
-    //background-color: green;
     -webkit-box-align: center;
     -webkit-box-pack: center;
     display: -webkit-box;
