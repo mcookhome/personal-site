@@ -133,4 +133,3 @@ function remake_satellites(div_name, satellites) {
         });
     });
 }
- 
