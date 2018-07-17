@@ -325,8 +325,6 @@
 
 <div class="page-section bgimg image-section-4" id="Contact">
 
-
-
     <div class="container w-75">
         <div class="icons float-right">
             <a class="icon" style="text-decoration:none;" href="https://www.linkedin.com/in/matthew-cook-b26a37147/" target="_blank">
@@ -340,38 +338,39 @@
             </a>
         </div>
         
-    <div class="float-right " id="notifs">
-    </div>
-
-    <h2 > Contact me</h2>
-    <div id="form-content"> 
-        <form method="post" id="contact-form" action="{{url_for('me')}}" class="form-control">
-        <br>Name
-        <div class="form-group">
-            <label class="sr-only" for="name">Name:</label>
-            <input type="text" class="form-control" id="name" name="name" required>
+        <div class="float-right " id="notifs">
         </div>
 
-        <br>Email
-        <div class="form-group">
-            <label class="sr-only" for="email">Email:</label>
-            <input type="email" class="form-control" id="email" name="email" required>
-        </div>
+        <h2> Contact me</h2>
 
-        <br>Message
-        <div class="form-group">
-            <label class="sr-only" for="message">Message:</label>
-            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-        </div>
-
-        <center>
-            <div class="button-div" style="height:300">
-            <div class="cssload-container" style="display:none">
-                <div class="cssload-loading"><i></i><i></i></div>
+        <div id="form-content"> 
+            <form method="post" id="contact-form" action="{{url_for('me')}}" class="form-control">
+            <br>Name
+            <div class="form-group">
+                <label class="sr-only" for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
             </div>
-            <button type="submit" id="send" class="btn btn-info btn-lg">Send</button>
+
+            <br>Email
+            <div class="form-group">
+                <label class="sr-only" for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+
+            <br>Message
+            <div class="form-group">
+                <label class="sr-only" for="message">Message:</label>
+                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+            </div>
+
+            <center>
+                <div class="button-div" style="height:300">
+                    <div class="cssload-container" style="display:none">
+                        <div class="cssload-loading"><i></i><i></i></div>
+                    </div>
+                <button type="submit" id="send" class="btn btn-info btn-lg">Send</button>
+            </div>
         </div>
-    </div>
 
     </div>
 
