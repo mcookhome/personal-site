@@ -31,14 +31,14 @@ def me():
 def bts():
     """ Route to define my billboard-to-spotify page, handling get and post requests """
     
-    if 'auth_token' not in request.cookies:
+    if 'access_token' not in request.cookies:
         auth_url = requests.get("http://mcook.me:8080/v1/authorization")
         return redirect(auth_url.text)
     elif request.method == 'POST':
         payload = {}
         payload["date"] = request.json["date"]
         payload["chart"] = request.json["chart"]
-        payload["auth_token"] = request.cookies.get('auth_token')
+        payload["access_token"] = request.cookies.get('access_token')
         print >>sys.stderr, str(payload)
         requests.post("http://mcook.me:8080/v1/bts", data=payload)
     else:
@@ -49,8 +49,11 @@ def bts():
 def btscallback():
     """ Route to define my billboard-to-spotify page, handling get and post requests """
     auth_token = request.args['code']
-    response = make_response(redirect('/billboard-to-spotify'))
-    response.set_cookie('auth_token', auth_token, max_age=60*60)
+    access_token = requests.post("http://mcook.me:8080/v1/gain-access", data={"auth_token":auth_token})
+    #response = make_response(redirect('/billboard-to-spotify'))
+    response = make_response("blah")
+    print >>sys.stderr, str(access_token.text)
+    response.set_cookie('access_token', access_token.text, max_age=60*60)
     return response
     
     
