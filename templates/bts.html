@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block head %}
+<script src="https://cdn.jsdelivr.net/jquery.textfill/0.6.0/jquery.textfill.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/scroll_down.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/loading.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/me.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="page-section bgimg image-section-4" id="billboard-to-spotify">
+
+    <div class="container w-75">
+        <div class="icons float-right">
+            <a class="icon" style="text-decoration:none;" href="https://www.linkedin.com/in/matthew-cook-b26a37147/" target="_blank">
+                <img src="static/contact_icons/linked_in_icon.png" width="32" alt="linkedin">
+            </a>
+            <a class="icon" style="text-decoration:none;" href="https://github.com/mcookhome" target="_blank">
+                <img src="static/contact_icons/github_icon.png" width="32" alt="github">
+            </a>
+            <a class="icon" style="text-decoration:none;" href="https://www.facebook.com/Mattthechef1" target="_blank">
+                <img src="static/contact_icons/facebook_icon.png" width="32" alt="facebook">
+            </a>
+        </div>
+
+        <div class="float-right " id="notifs">
+        </div>
+
+        <h2> Billboard to Spotify </h2>
+
+        <div id="form-content">
+            <form method="post" id="bts-form" action="{{url_for('bts')}}" class="form-control">
+            <br>Date of Billboard top 100 chart
+            <div class="form-group">
+                <label class="sr-only" for="date">Date:</label>
+                <input type="date" class="form-control" id="date" name="date" required>
+            </div>
+
+            <br>Chart name
+            <div class="form-group">
+                <label class="sr-only" for="chart">Chart name:</label>
+                <input type="text" class="form-control" id="chart" name="chart" value="hot-100" required>
+            </div>
+
+
+            <center>
+                <div class="button-div" style="height:300">
+                    <div class="cssload-container" style="display:none">
+                        <div class="cssload-loading"><i></i><i></i></div>
+                    </div>
+                <button type="submit" id="send" class="btn btn-info btn-lg">Send</button>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/bts.js') }}"></script>
+
+{% endblock %}
