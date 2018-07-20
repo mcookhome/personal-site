@@ -40,7 +40,9 @@ def bts():
         payload["chart"] = request.json["chart"]
         payload["access_token"] = request.cookies.get('access_token')
         print >>sys.stderr, str(payload)
-        requests.post("http://mcook.me:8080/v1/bts", data=payload)
+        playlist_url = requests.post("http://mcook.me:8080/v1/bts", data=payload)
+        print >>sys.stderr, str(playlist_url)
+        return(playlist_url.text)
     else:
         return render_template("bts.html")
         
@@ -50,8 +52,7 @@ def btscallback():
     """ Route to define my billboard-to-spotify page, handling get and post requests """
     auth_token = request.args['code']
     access_token = requests.post("http://mcook.me:8080/v1/gain-access", data={"auth_token":auth_token})
-    #response = make_response(redirect('/billboard-to-spotify'))
-    response = make_response("blah")
+    response = make_response(redirect('/billboard-to-spotify'))
     print >>sys.stderr, str(access_token.text)
     response.set_cookie('access_token', access_token.text, max_age=60*60)
     return response

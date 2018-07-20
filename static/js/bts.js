@@ -22,11 +22,12 @@ $(document).ready(function(){
                  data: JSON.stringify(params, null, '\t'),
                  contentType:'application/json;charset=UTF-8',
                  success: function(result) {
+                     console.log(result);
+                     window.location.href = result;
                      $('#bts-form').trigger('reset');
-                     $('#notifs').append(success_msg + "<strong>Sent!</strong> I'll respond at the email you provided.  </div>");
+                     $('#notifs').append(success_msg + "<strong>Finished!</strong>Please check your Spotify!</div>");
                      $('.cssload-container').hide();
                      $('#send').show();
-
                  },
                  error: function(error) {
                      console.log(error);
