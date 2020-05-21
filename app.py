@@ -3,27 +3,26 @@
 import sys
 import random
 from flask import Flask, render_template, request, redirect, make_response
-from util import credentials, send_email
-from urllib import quote
+from util import send_email
 import requests
 
 app = Flask(__name__)
+EMAIL = 'mcookhome@gmail.com'
+print(sys.version)
 
 @app.route("/", methods=['GET', 'POST'])
 def me():
     """ Route to define my home page, handling get and post requests """
 
     circles = ["About", "Career", "Education", "Skills", "Interests", "Contact"]
-    images = random.sample(xrange(1, 40), 4)
-    email = credentials.login['email']
-    password = credentials.login['password']
+    images = random.sample(range(1, 40), 4)
     tab = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
     if request.method == 'POST':
         name = request.json["name"]
         form_email = request.json["email"]
         message = request.json["message"]
-        send_email.send(email, email, name + " (" + form_email + ") has sent you a message!",
-                        message, password)
+        subject = name + " (" + form_email + ") has sent you a message!"
+        sent = send_email.send_message(EMAIL, EMAIL, subject, message)
 
     return render_template("me.html", circles=circles, images=images, tab=tab)
 

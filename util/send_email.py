@@ -1,23 +1,20 @@
-""" Module to send emails """
-
+# Import smtplib for the actual sending function
 import smtplib
+import sys
 
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-from email.header import Header
+print(sys.version)
+# Import the email modules we'll need
+from email.message import EmailMessage
 
-def send(from_addr, to_addr, subject, message, password):
-    """ Sends an email with the given data """
+# Open the plain text file whose name is in textfile for reading.
+def send_message(me, you, subject, message):
+    msg = EmailMessage()
+    msg.set_content(message)
 
-    smtp_server = smtplib.SMTP('smtp.gmail.com', 587)
-    smtp_server.ehlo()
-    smtp_server.starttls()
-    smtp_server.login(from_addr, password)
-    msg = MIMEMultipart()
-    msg["From"] = from_addr
-    msg["To"] = to_addr
-    msg["Subject"] = "[mcook.me]" + subject
-    msg.attach(MIMEText(message.encode('utf-8'), 'plain', 'UTF-8'))
+    msg['Subject'] = "[mcook.me] " + subject
+    msg['From'] = me
+    msg['To'] = you
 
-    smtp_server.sendmail(from_addr, to_addr, msg.as_string())
-    smtp_server.quit()
+    s = smtplib.SMTP('localhost')
+    s.send_message(msg)
+    s.quit()
